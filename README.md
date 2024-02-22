@@ -6,6 +6,10 @@
 - @astrojs/mdx - https://docs.astro.build/en/guides/markdown-content/
 - @astrojs/rss - https://docs.astro.build/en/guides/rss/
 - @astrojs/prism - https://docs.astro.build/en/reference/api-reference/#prism
+
+- ## License
+
+This template is open-source software licensed under the [GPL-3.0 license](https://opensource.org/licenses/GPL-3.0). Feel free to fork, modify, and use it in your projects.
   
 ## Template Structure
 
