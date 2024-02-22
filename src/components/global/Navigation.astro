@@ -1,54 +1,77 @@
-<div class="w-full mx-auto bg-white dark:bg-black justify-center">
-  <div
-    class="w-full mx-auto max-w-3xl px-8 lg:px-0 flex flex-col lg:flex-row lg:items-center lg:justify-between py-3"
-    x-data="{ open: false }">
-    <div
-      class="flex flex-row items-center justify-between text-black dark:text-white">
-      <a class="items-center inline-flex      uppercase" href="/"
-        ><span>Lexington Starter.</span>
-      </a><button
-        class="focus:shadow-outline focus:outline-none lg:hidden rounded-lg"
-        @click="open = !open"
-        aria-label="Toggle navigation"
-        ><svg
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-          ><path
-            d="M4 6h16M4 12h16M4 18h16"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="{'hidden': open, 'inline-flex': !open }"
-            class="inline-flex"></path><path
-            d="M6 18L18 6M6 6l12 12"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="{'hidden': !open, 'inline-flex': open }"
-            class="hidden"></path></svg
-        ></button
+<div class="fixed top-4 inset-x-0 z-50">
+  <div class="max-w-2xl mx-auto px-8">
+    <div class="w-full mx-auto">
+      <div
+        x-data="{ open: false }"
+        class="relative flex flex-col w-full p-3 mx-auto bg-white ring-1 uppercase ring-zinc-200 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
       >
+        <div
+          class="flex flex-row items-center justify-between md:justify-start"
+        >
+          <a
+            class="text-black hover:text-black/50 gap-4 items-center tracking-tighter inline-flex font-bold ml-2 text-xl"
+            href="/" title="linke to main page"
+          >
+           Minimal
+          </a><button
+            @click="open = !open"
+            class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-cyan-300 focus:outline-none focus:text-black md:hidden"
+            ><svg
+              class="w-6 h-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+              ><path
+                :class="{'hidden': open, 'inline-flex': !open }"
+                class="inline-flex"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path><path
+                :class="{'hidden': !open, 'inline-flex': open }"
+                class="hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path></svg
+            ></button
+          >
+        </div><nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row"
+        >
+          <ul
+            class="space-y-2 list-none text-xs text-zinc-500 md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3"
+          >
+            <li>
+              <a
+                href="https://lexingtonthemes.com/"
+                class="hover:text-black shrink-0"
+              >
+                Templates</a
+              >
+            </li>
+            <li>
+              <a href="#work" class="hover:text-black shrink-0"> Work</a>
+            </li>
+            <li>
+              <a href="#how" class="hover:text-black shrink-0"> How it works</a>
+            </li>
+            <li>
+              <a href="#pricing" class="hover:text-black shrink-0"> Plans</a>
+            </li><li>
+              <a href="#faq" class="hover:text-black shrink-0"> Faq</a>
+            </li><li class="shrink-0">
+              <a
+                href="https://github.com/michael-andreuzza/minimalstudio"
+                class="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black bg-black/5 hover:bg-transparent text-black duration-200 focus:ring-offset-2 hover:text-black inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
+              >
+                GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav
-      :class="{'flex': open, 'hidden': !open}"
-      class="items-center flex-grow flex-col hidden lg:flex lg:flex-row lg:justify-start lg:mt-0 lg:p-0 lg:px-0 md:pb-0 opacity-100 p-4 px-5">
-      <a
-        class="text-sm ease-in-out transform transition focus:ring-2 focus:ring-zinc-500 focus:outline-none duration-1000 focus:shadow-none focus:text-black dark:text-white/90 hover:text-zinc-500 dark:text-zinc-400 md:my-0 px-4 py-2 lg:py-0 text-zinc-500 lg:ml-auto"
-        href="/overview"
-        >Overview
-      </a><a
-        class="text-sm ease-in-out transform transition focus:ring-2 focus:ring-zinc-500 focus:outline-none duration-1000 focus:shadow-none focus:text-black dark:text-white/90 hover:text-zinc-500 dark:text-zinc-400 md:my-0 px-4 py-2 lg:py-0 text-zinc-500"
-        href="/style-guide"
-        >Style Guide
-      </a>
-      <a
-        class="text-sm ease-in-out transform transition focus:ring-2 focus:ring-zinc-500 focus:outline-none duration-1000 focus:shadow-none focus:text-zinc-500 dark:text-white/90 hover:text-zinc-500 dark:text-zinc-400 md:my-0 px-4 py-2 lg:py-0 text-black lg:pl-4 lg:border-l-2"
-        href="#_"
-        >Buy template &nbsp; &rarr;
-      </a>
-    </nav>
   </div>
 </div>

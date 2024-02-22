@@ -1,0 +1,119 @@
+<section >
+  <div
+    class="px-8 md:px-12 py-12 max-w-2xl mx-auto"
+  >
+    <div class="relative overflow-hidden">
+
+
+      <div
+        class="container flex flex-col justify-center overflow-hidden md:flex-row"
+        x-data="{ testimonialActive: 2 }"
+      >
+        <div>
+          <div class="relative flex flex-col h-full text-left">
+            <div class="relative z-10 h-full">
+              <div class="pb-6 max-w-xl mx-auto">
+                <div
+                  x-show.immediate="testimonialActive === 1"
+                  style="display: none;"
+                >
+                  <p
+                    class="font-medium leading-6 text-zinc-500 text-base text-balance  flex gap-2 items-center text-center mx-auto "
+                    x-show.transition="testimonialActive == 1"
+                    style="display: none;"
+                  >
+                    Michael is a true rarity, effortlessly bridging the realms
+                    of design and coding. His designs are masterfully polished,
+                    striking a perfect balance between being on trend and
+                    remaining distincltly original.
+                  </p>
+                </div><div
+                  x-show.immediate="testimonialActive === 2"
+                  style="display: none;"
+                >
+                  <p
+                    class="font-medium leading-6 text-zinc-500 text-base text-balance  flex gap-2 items-center text-center mx-auto "
+                    x-show.transition="testimonialActive == 2"
+                    style="display: none;"
+                  >
+                    Michael has a great eye for design and he is an absolute
+                    pleasure to work with. I definitely plan on working with him
+                    on future projects of mine. I wholeheartedly recommend him
+                    to anyone seeking standout, quality work.
+                  </p>
+                </div><div x-show.immediate="testimonialActive === 3">
+                  <p
+                    class="font-medium leading-6 text-zinc-500 text-base text-balance  flex gap-2 items-center text-center mx-auto  max-w-md"
+                    x-show.transition="testimonialActive == 3"
+                  >
+                    Michael is a rare breed of designer &amp; dev that
+                    understands business needs. He leveraged his previous
+                    experience to build out a few landings very quickly for
+                    Versoly.
+                  </p>
+                </div>
+              </div><div class="flex items-center justify-center mt-6 lg:my-4">
+                <button
+                  @click.prevent="testimonialActive = 1"
+                  class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:ring-2  size-12 opacity-50 bg-gradientdown"
+                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 1, 'opacity-100 bg-gradientdown text-white': testimonialActive == 1 }"
+                  ><img
+                    class="inline-block w-12 h-12 rounded-full grayscale border"
+                    src="/tonylea.jpg"
+                    alt="#"
+                  /></button
+                ><button
+                  @click.prevent="testimonialActive = 2"
+                  class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:ring-2  size-12 opacity-50 bg-gradientdown"
+                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 2, 'opacity-100 bg-gradientdown ': testimonialActive == 2 }"
+                  ><img
+                    class="inline-block w-12 h-12 rounded-full grayscale border"
+                    src="/robaustin.jpg"
+                    alt="Rob ustin"
+                  /></button
+                ><button
+                  @click.prevent="testimonialActive = 3"
+                  class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:ring-2  opacity-100 bg-gradientdown text-white"
+                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 3, 'opacity-100 bg-gradientdown text-white': testimonialActive == 3 }"
+                  ><img
+                    class="inline-block w-12 h-12 rounded-full grayscale border"
+                    src="/volkan.jpg"
+                    alt="@heychazza on twitter"
+                  /></button
+                >
+              </div><div class="flex justify-center px-4 pt-4 pb-6 md:py-6">
+                <div
+                  class="text-center"
+                  x-show="testimonialActive == 1"
+                  style="display: none;"
+                >
+                  <h2 class="text-zinc-500 text-sm font-medium lg:text-base ">
+                    Tony Lea
+                  </h2><a href="#" class="text-xs text-zinc-500"
+                    >Founder of DevDojo</a
+                  >
+                </div><div
+                  class="text-center"
+                  x-show="testimonialActive == 2"
+                  style="display: none;"
+                >
+                  <h2 class="text-zinc-500 text-sm font-medium lg:text-base ">
+                    Robert Austin
+                  </h2><a href="#" class="text-xs text-zinc-500"
+                    >Founder of Built At Lightspeed.</a
+                  >
+                </div><div class="text-center" x-show="testimonialActive == 3">
+                  <h2 class="text-zinc-500 text-sm font-medium lg:text-base ">
+                    Volkan Kaja
+                  </h2><a href="#" class="text-xs text-zinc-500">
+                    Founder of Versoly</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

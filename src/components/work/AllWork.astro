@@ -1,0 +1,68 @@
+---
+import { work } from "../../data/work.json";
+---
+
+<section class="md:px-12 sm:px-8 relative border-zinc-700 2xl:border-x">
+  <div class="border-x border-zinc-700 h-12"></div>
+</section>
+<section
+  class="md:px-12 sm:px-8 relative border-y border-zinc-700 2xl:border-x"
+  style=""
+>
+  <div class="border-x border-zinc-700">
+    <div
+      class="p-px lg:rounded-[3rem] overflow-hidden bg-gradientTopRight ring-1 ring-zinc-700"
+    >
+      <div class="bg-black/50 lg:bg-transparent backdrop-blur-3xl p-8 lg:p-20">
+        <h2
+          class="text-5xl  tracking-tighter font-normal md:text-6xl text-white"
+        >
+          Selected work
+        </h2>
+        <div class="divide-y divide-white/10 border-y border-white/10 mt-12">
+          {
+            work.map((template) => (
+              <>
+                <div class="py-4 flex flex-col sm:flex-row justify-between gap-4 lg:items-end">
+                  <div>
+                    <p class="font-medium leading-6 text-white ">
+                      {template.title}
+                    </p>
+                    <p class="text-xs text-zinc-400 mt-2">
+                      {template.description}
+                    </p>
+                    <div class="flex items-center gap-2 mt-4">
+                      <p class="text-xs text-white">{template.type}</p>
+                    </div>
+                  </div>
+                  <div class="lg:ml-auto">
+                    <a
+                      href={template.url}
+                      class="bg-black/8 duration-300 hover:bg-black/90 focus:bg-transparent  rounded-full inline-flex items-center text-center text-white p-4 ring-1 ring-white/10 w-12 h-12"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-arrow-narrow-right w-4 h-4"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l14 0" />
+                        <path d="M15 16l4 -4" />
+                        <path d="M15 8l4 4" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

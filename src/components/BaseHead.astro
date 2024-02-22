@@ -1,33 +1,58 @@
 ---
 import "../styles/global.css";
-import Metas from "./seo/Metas.astro";
-import Favicons from "./seo/Favicons.astro";
-const {
-  title = "Lexington Starter",
-  description = "#",
-  url,
-  socialImage = "/social-preview-image.png",
-  twitterImage = "/twitter-preview-image.png", // Assuming you have a separate image for Twitter
-  author = "Lexington Themes",
-} = Astro.props;
-const sanitizedTitle = title.toLowerCase().replaceAll(" ", "-");
+import { AstroSeo } from '@astrolib/seo';
+import Favicons from "./global/Favicons.astro";
 ---
-<Metas
-  title={title}
-  description={description.substring(0, 100)}
-  url={Astro.site
-    ? `${Astro.site}/${sanitizedTitle}`
-    : `https://lexingtonthemes.com/${sanitizedTitle}`}
-  image={socialImage}
-  author={author}
-  twitterImage={twitterImage}
+<AstroSeo
+  title="minimal"
+  description="We create websites that convert visitors into customers Design and development subscriptions for everyone. Pause or cancel anytime."
+  canonical="https://www.minimal.studio"
+  openGraph={{
+    url: "https://www.minimal.studio",
+    title: "minimal",
+    description: "We create websites that convert visitors into customers Design and development subscriptions for everyone. Pause or cancel anytime.",
+    images: [
+      {
+        url: "https://www.minimal.studio/opengraph/facebook.png",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.minimal.studio/opengraph/twitter.png",
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.minimal.studio/opengraph/facebook.png" },
+      { url: "https://www.minimal.studio/opengraph/twitter.png" },
+    ],
+    site_name: "minimal",
+  }}
+  twitter={{
+    handle: "@Mike_Andreuzza",
+    site: "https://minimal.studio",
+    cardType: "summary_large_image",
+  }}
 />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Michael Andreuzza" />
+<meta name="your keywords" content="Add ypour keywords here" />
+
+
 <Favicons/>
-<!-- HTML in your document's head -->
 <link rel="preconnect" href="https://rsms.me/" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<link
-  href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@1,2&display=swap"
-  rel="stylesheet"
-/>
+
+
+
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
