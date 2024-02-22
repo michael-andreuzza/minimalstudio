@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+import EntriesOne from "../components/entries/EntriesOne.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout>
+  <section>
+    <div class="mx-auto max-w-7xl px-8 py-12 lg:py-32 space-y-24">
+      <div class="mx-auto max-w-3xl">
+        <h1
+          class="text-3xl lg:text-7xl font-light      text-black dark:text-white">
+          Me and my thoughts
+        </h1>
+        <div class="flex max-w-sm flex-col mt-6">
+        </div>
+      </div>
+      <div class="grid gap-y-24 mx-auto max-w-3xl md:grid-cols-2 gap-12">
+        {
+          allPosts
+            .slice()
+            .map((post) => (
+              <EntriesOne
+                url={"/posts/" + post.slug}
+                title={post.data.title}
+                description={post.data.description}
+                alt={post.data.title}
+                pubDate={post.data.pubDate.toString().slice(0, 10)}
+                author={post.data.author}
+                image={post.data.image.url}
+              />
+            ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

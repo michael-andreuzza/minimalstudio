@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --astro-code-color-text: theme('colors.black');
+  --astro-code-color-background: theme('colors.gray.200');
+  --astro-code-token-constant: theme('colors.red.500');
+  --astro-code-token-string: theme('colors.teal.500');
+  --astro-code-token-comment: theme('colors.gray.400');
+  --astro-code-token-keyword: theme('colors.lime.700');
+  --astro-code-token-parameter: theme('colors.red.900');
+  --astro-code-token-function: theme('colors.yellow.600');
+  --astro-code-token-string-expression: theme('colors.indigo.500');
+  --astro-code-token-punctuation: theme('colors.orange.500');
+  --astro-code-token-link: theme('colors.blue.800');
+}
+
+.prose-styles {
+  @apply max-w-3xl prose prose-p:text-zinc-500 ;
+}
+/* CSS */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03" 1, /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
+}
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}

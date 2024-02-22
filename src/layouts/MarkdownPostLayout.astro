@@ -1,0 +1,76 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headings = document.querySelectorAll(" h2,  h3");
+    const tocContainer = document.getElementById("table-of-contents");
+    if (tocContainer && headings.length > 0) {
+      const tocList = document.createElement("ul");
+      tocList.classList.add("space-y-3", "text-xs");
+      headings.forEach((heading) => {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.textContent = heading.textContent;
+        link.href = `#${heading.id}`;
+        link.classList.add("text-black", "dark:text-white", "hover:underline");
+        listItem.appendChild(link);
+        tocList.appendChild(listItem);
+      });
+      tocContainer.appendChild(tocList);
+      tocContainer.classList.remove("hidden");
+    }
+  });
+</script>
+<BaseLayout>
+  <section>
+    <div class="mx-auto max-w-3xl px-8 lg:px-0 py-12 lg:py-32 isolate overflow-hidden">
+      <div class="relative flex flex-col lg:flex-row gap-24">
+        <div id="table-of-contents" class="hidden lg:block lg:sticky lg:top-20">
+          <!-- Your table of contents content here -->
+        </div>
+        <div class="lg:col-span-3">
+          <header class="flex flex-col max-w-3xl mx-auto">
+            <h1
+              class="text-3xl lg:text-4xl font-light      text-black dark:text-white uppercase"
+            >
+              {frontmatter.title}
+            </h1>
+            <div class="mt-2 relative flex items-center gap-x-4">
+              <div class="text-sm leading-6 inline-flex items-center gap-3">
+                <p
+                  class="font-semibold text-zinc-500 dark:text-zinc-400      uppercase"
+                >
+                  <span class="absolute inset-0"></span>
+                  {frontmatter.author}
+                </p>
+                <p class="text-zinc-500 dark:text-zinc-400">
+                  <time datetime={frontmatter.pubDate.toString().slice(0, 10)}>
+                    <span>{frontmatter.pubDate.toString().slice(0, 10)}</span>
+                  </time>
+                </p>
+              </div>
+            </div>
+            <p class="text-zinc-500 dark:text-zinc-400 mt-8">
+              <em>{frontmatter.description}</em>
+            </p>
+            <div class="flex flex-wrap gap-6 mt-12">
+              {
+                frontmatter.tags.map((tag) => (
+                  <span class="inline-flex items-center text-sm font-light text-black dark:text-white  underline hover:text-blue-300">
+                    <a href={`/tags/${tag}`}>{tag}</a>
+                  </span>
+                ))
+              }
+            </div>
+          </header>
+          <div class="mt-8 prose-styles">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allPosts = await getCollection("posts");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const pageTitle = "Tag Index";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <div class="mx-auto max-w-7xl px-8 py-12 lg:py-32">
+      <div class="max-w-3xl mx-auto space-y-24">
+        <div>
+          <h1
+            class="text-3xl lg:text-6xl      text-black dark:text-white uppercase">
+            Tag index
+          </h1>
+        </div>
+        <div>
+          {
+            tags.map((tag) => (
+              <div class="py-3">
+                <a href={`/tags/${tag}`}>
+                  <div class="flex flex-col">
+                    <h4 class="text-lg lg:text-xl text-black dark:text-white uppercase      hover:text-zinc-500 dark:text-zinc-400">
+                      {tag}
+                    </h4>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

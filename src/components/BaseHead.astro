@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import Metas from "./seo/Metas.astro";
+import Favicons from "./seo/Favicons.astro";
+const {
+  title = "Lexington Starter",
+  description = "#",
+  url,
+  socialImage = "/social-preview-image.png",
+  twitterImage = "/twitter-preview-image.png", // Assuming you have a separate image for Twitter
+  author = "Lexington Themes",
+} = Astro.props;
+const sanitizedTitle = title.toLowerCase().replaceAll(" ", "-");
+---
+<Metas
+  title={title}
+  description={description.substring(0, 100)}
+  url={Astro.site
+    ? `${Astro.site}/${sanitizedTitle}`
+    : `https://lexingtonthemes.com/${sanitizedTitle}`}
+  image={socialImage}
+  author={author}
+  twitterImage={twitterImage}
+/>
+<Favicons/>
+<!-- HTML in your document's head -->
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link
+  href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@1,2&display=swap"
+  rel="stylesheet"
+/>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
