@@ -7,7 +7,7 @@
 
       <div
         class="container flex flex-col justify-center overflow-hidden md:flex-row"
-        x-data="{ testimonialActive: 2 }"
+        x-data="{ testimonialActive: 1 }"
       >
         <div>
           <div class="relative flex flex-col h-full text-left">
@@ -27,24 +27,10 @@
                     striking a perfect balance between being on trend and
                     remaining distincltly original.
                   </p>
-                </div><div
-                  x-show.immediate="testimonialActive === 2"
-                  style="display: none;"
-                >
-                  <p
-                    class="font-medium leading-6 text-zinc-500 text-base text-balance  flex gap-2 items-center text-center mx-auto "
-                    x-show.transition="testimonialActive == 2"
-                    style="display: none;"
-                  >
-                    Michael has a great eye for design and he is an absolute
-                    pleasure to work with. I definitely plan on working with him
-                    on future projects of mine. I wholeheartedly recommend him
-                    to anyone seeking standout, quality work.
-                  </p>
-                </div><div x-show.immediate="testimonialActive === 3">
+                </div><div x-show.immediate="testimonialActive === 2">
                   <p
                     class="font-medium leading-6 text-zinc-500 text-base text-balance  flex gap-2 items-center text-center mx-auto  max-w-md"
-                    x-show.transition="testimonialActive == 3"
+                    x-show.transition="testimonialActive == 2"
                   >
                     Michael is a rare breed of designer &amp; dev that
                     understands business needs. He leveraged his previous
@@ -64,17 +50,8 @@
                   /></button
                 ><button
                   @click.prevent="testimonialActive = 2"
-                  class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:ring-2  size-12 opacity-50 bg-gradientdown"
-                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 2, 'opacity-100 bg-gradientdown ': testimonialActive == 2 }"
-                  ><img
-                    class="inline-block w-12 h-12 rounded-full grayscale border"
-                    src="/robaustin.jpg"
-                    alt="Rob ustin"
-                  /></button
-                ><button
-                  @click.prevent="testimonialActive = 3"
                   class="inline-block mx-2 font-bold text-center rounded-full shadow-xs focus:outline-none focus:ring-2  opacity-100 bg-gradientdown text-white"
-                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 3, 'opacity-100 bg-gradientdown text-white': testimonialActive == 3 }"
+                  :class="{'size-12 opacity-50 bg-gradientdown ': testimonialActive != 2, 'opacity-100 bg-gradientdown text-white': testimonialActive == 2 }"
                   ><img
                     class="inline-block w-12 h-12 rounded-full grayscale border"
                     src="/volkan.jpg"
@@ -92,17 +69,7 @@
                   </h2><a href="#" class="text-xs text-zinc-500"
                     >Founder of DevDojo</a
                   >
-                </div><div
-                  class="text-center"
-                  x-show="testimonialActive == 2"
-                  style="display: none;"
-                >
-                  <h2 class="text-zinc-500 text-sm font-medium lg:text-base ">
-                    Robert Austin
-                  </h2><a href="#" class="text-xs text-zinc-500"
-                    >Founder of Built At Lightspeed.</a
-                  >
-                </div><div class="text-center" x-show="testimonialActive == 3">
+                </div><div class="text-center" x-show="testimonialActive == 2">
                   <h2 class="text-zinc-500 text-sm font-medium lg:text-base ">
                     Volkan Kaja
                   </h2><a href="#" class="text-xs text-zinc-500">
