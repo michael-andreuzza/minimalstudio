@@ -9,6 +9,8 @@ This template is open-source software licensed under the [GPL-3.0 license](https
 Checkout [Lexington Themes](https://lexingtonthemes.com/) for free and premium multipage themes & UI Kits
 For freelancers, developers, businesses, and personal use.
 Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customise.
+ ## Before using this template publicly, please ensure you remove my name and any links associated with me from the website.
+
 
 # This template is using Tailwind CSS V4
 
