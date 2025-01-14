@@ -1,10 +1,7 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
-@theme {
-  --variable-name: value;
-}
 
 :root {
   font-family: Inter, sans-serif;
