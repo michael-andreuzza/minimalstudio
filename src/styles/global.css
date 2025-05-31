@@ -4,12 +4,37 @@
 @plugin "tailwind-scrollbar-hide";
 
 :root {
-  font-family: Inter, sans-serif;
-
+  font-family: Inter, system-ui, sans-serif; /* Kept Inter, added system-ui fallback */
 }
+
 @supports (font-variation-settings: normal) {
-  /* Use variable font if supported */
   :root {
-    font-family: InterVariable, sans-serif;
+    font-family: InterVariable, system-ui, sans-serif; /* Kept InterVariable */
   }
 }
+
+body {
+  background-color: #FFF7ED; /* Light warm beige (Papaya Whip like) */
+  color: #4A4A4A; /* Soft dark gray for text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2F4F2F; /* Dark Olive Green - trustworthy and natural */
+  /* Tailwind utility classes will override this if applied directly to elements */
+}
+
+a {
+  color: #D97706; /* Amber 600 - a warm, inviting orange/brown for links */
+  /* Tailwind's text-yellow-500 or text-green-500 might be used directly on some links */
+}
+
+a:hover {
+  color: #B45309; /* Amber 700 */
+}
+
+/* Ensuring buttons primarily use Tailwind classes by not defining global button styles here,
+   unless a very generic reset or base is needed.
+   The components already use Tailwind classes for buttons (bg-green-500, bg-yellow-500)
+   which is the preferred way. */

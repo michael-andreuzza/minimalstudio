@@ -9,28 +9,14 @@
           class="flex flex-row items-center justify-between md:justify-start"
         >
           <a
-            class="text-black hover:text-black/50 gap-4 items-center tracking-tighter inline-flex font-bold  text-xl"
-            href="/" title="linke to main page"
+            class="text-xl font-bold text-gray-800 hover:text-green-500"
+            href="/" title="link to main page"
           >
-          <svg class="h-8" viewBox="0 0 201 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_980)">
-            <mask id="mask0_1_980" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="201" height="200">
-            <path d="M200.5 0H0.5V200H200.5V0Z" fill="white"/>
-            </mask>
-            <g mask="url(#mask0_1_980)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M100.5 200C155.728 200 200.5 155.228 200.5 100C200.5 44.7715 155.728 0 100.5 0C45.2715 0 0.5 44.7715 0.5 100C0.5 155.228 45.2715 200 100.5 200ZM100.5 143.75C124.662 143.75 144.25 124.162 144.25 100C144.25 75.8375 124.662 56.25 100.5 56.25C76.3375 56.25 56.75 75.8375 56.75 100C56.75 124.162 76.3375 143.75 100.5 143.75Z" fill="black"/>
-            </g>
-            </g>
-            <defs>
-            <clipPath id="clip0_1_980">
-            <rect width="200" height="200" fill="white" transform="translate(0.5)"/>
-            </clipPath>
-            </defs>
-            </svg>
-            
-          </a><button
+            DOGGOFOOD
+          </a>
+          <button
             @click="open = !open"
-            class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-cyan-300 focus:outline-none focus:text-black md:hidden"
+            class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-green-500 focus:outline-none focus:text-black md:hidden"
             ><svg
               class="w-6 h-6"
               stroke="currentColor"
@@ -56,34 +42,12 @@
           class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row"
         >
           <ul
-            class="space-y-2 list-none text-xs text-zinc-600 md:space-y-0 font-medium md:ml-auto items-center md:flex justify-center text-center md:text-left gap-3"
+            class="space-y-2 list-none md:space-y-0 md:ml-auto items-center md:flex justify-center text-center md:text-left gap-3"
           >
-            <li>
-              <a
-                href="https://lexingtonthemes.com/"
-                class="hover:text-black shrink-0"
-              >
-                Astro Themes</a
-              >
-            </li>
-            <li>
-              <a href="#work" class="hover:text-black shrink-0"> Work</a>
-            </li>
-            <li>
-              <a href="#how" class="hover:text-black shrink-0"> How it works</a>
-            </li>
-            <li>
-              <a href="#pricing" class="hover:text-black shrink-0"> Plans</a>
-            </li><li>
-              <a href="#faq" class="hover:text-black shrink-0"> Faq</a>
-            </li><li class="shrink-0">
-              <a
-                href="https://github.com/michael-andreuzza/minimalstudio"
-                class="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black bg-white hover:bg-transparent text-black duration-200 focus:ring-offset-2 hover:text-black inline-flex items-center justify-center ring-2 focus:ring-black ring-transparent"
-              >
-                GitHub</a
-              >
-            </li>
+            <li><a class="text-gray-800 hover:text-green-500 px-3" href="/">Home</a></li>
+            <li><a class="text-gray-800 hover:text-green-500 px-3" href="#products">Products</a></li>
+            <li><a class="text-gray-800 hover:text-green-500 px-3" href="#testimonials">Testimonials</a></li>
+            <li><a class="text-gray-800 hover:text-green-500 px-3" href="mailto:contact@doggofood.com">Contact</a></li>
           </ul>
         </nav>
       </div>
