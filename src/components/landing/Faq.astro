@@ -1,235 +1,81 @@
-<section class="scroll-mt-24" id="faq">
-  <div class="px-8 md:px-12 py-12 max-w-2xl mx-auto">
-    <div class="">
-      <h2 class="text-3xl tracking-tighter font-light lg:text-4xl text-black">
-        The answers to the most <span class="block"
-          >popular frequent questions
-        </span>
-      </h2>
-      <p class="mt-5 text-black">
-        Can't find your answer? Send an <a
-          class="text-blue-400 hover:text-black duration-200"
-          href="mailto:michael@andreuzza.com">email</a
-        > and minimal will get back to you .
-      </p>
+---
+const faqs = [
+  {
+    question: "Who runs the studio?",
+    answer:
+      "My name is Michael Andreuzza, UI Designer and Front-end Developer. I also build products for myself. Learn more at michaelandreuzza.com.",
+  },
+  {
+    question: "How do we communicate and manage the project?",
+    answer:
+      "Minimal uses Breeew for project management, ensuring seamless communication and collaboration.",
+  },
+  {
+    question: "How quickly will I get some work done?",
+    answer:
+      "Expect the initial concept within 2–3 days. For larger projects, timelines may extend up to 4 weeks. Revisions are unlimited until you're satisfied.",
+  },
+  {
+    question: "Why do you only have two spots?",
+    answer:
+      "To ensure high-quality results and focused attention, minimal only takes on two projects at a time. This allows for timely and dedicated work.",
+  },
+  {
+    question: "What if I don’t like the design?",
+    answer:
+      "Your satisfaction is the priority. That’s why minimal offers unlimited design requests and revisions.",
+  },
+  {
+    question: "Are there any refunds?",
+    answer:
+      "Due to the creative effort and research required, refunds aren't offered once work begins. However, if no work has started and the fit isn’t right after our initial discussion, you're eligible for a 100% refund.",
+  },
+];
+---
 
-    </div>
-    <div x-data="{selected:null}">
-      <ul
-        class="list-none text-black bg-white rounded-3xl divide-y divide-zinc-200 mt-8"
-        role="list"
-        @click="open = !open"
+<section>
+  <div class="px-8 py-12 max-w-xl mx-auto">
+    <h2 class="text-4xl tracking-tight text-base-900 text-balance font-medium">
+      The answers to the most <span class="block"
+        >popular frequent questions</span
       >
-        <li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 1 ? selected = 1 : selected = null"
-            type="button"
-          >
-            <div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                Who runs the studio?
-              </p>
+    </h2>
+    <p class="mt-2 text-sm text-base-600">
+      Can't find your answer? Send an
+      <a
+        class="text-blue-500 hover:text-base-900 duration-200"
+        href="mailto:michael@andreuzza.com"
+      >
+        email
+      </a>
+      and minimal will get back to you.
+    </p>
+
+    <div
+      class="mt-8 bg-white rounded-3xl text-base-900 divide-y divide-base-100"
+    >
+      {
+        faqs.map((faq, i) => (
+          <details class="px-8 py-6 group">
+            <summary class="cursor-pointer text-sm font-medium  flex justify-between items-center">
+              {faq.question}
               <svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
+                class="size-4 ml-2 transform transition-transform group-open:rotate-180"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0l-4.24-4.24a.75.75 0 01.02-1.06z"
                   clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-            x-ref="container1"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              My name is Michael Andreuzza, UI Designer and Front end Developer.
-              I also build products for myself. Learn more <a
-                class="text-blue-500 hover:text-black"
-                href="https://michaelandreuzza.com/">here</a
-              >
-            </div>
-          </div>
-        </li><li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 2 ? selected = 2 : selected = null"
-            type="button"
-            ><div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                How do we communicate and manage the project?
-              </p><svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-            x-ref="container2"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              minimal uses Breeew for project management, ensuring seamless
-              communication and collaboration.
-            </div>
-          </div>
-        </li><li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 3 ? selected = 3 : selected = null"
-            type="button"
-            ><div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                How quickly will I get some work done?
-              </p><svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 3 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-            x-ref="container2"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              Expect the initial concept within 2-3 days, and minimal will make
-              revisions until it meets your complete satisfaction. For bigger
-              projects it can take up to 4 weeks.
-            </div>
-          </div>
-        </li><li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 4 ? selected = 4 : selected = null"
-            type="button"
-            ><div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                Why do you only have two spots ?
-              </p><svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 4 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-            x-ref="container2"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              minimal believes in providing the best possible service to
-              clients, and to ensure that, minimal has decided to limit the
-              workload to just two projects at a time. This approach allows
-              minimal to dedicate it's full attention and expertise to each
-              project, ensuring quality and timely delivery.
-            </div>
-          </div>
-        </li>
-        <li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 5 ? selected = 5 : selected = null"
-            type="button"
-            ><div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                What if i don't like the design?
-              </p><svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 5 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-            x-ref="container2"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              minimal wants you to be happy with the results! Hence the
-              unlimited requests.
-            </div>
-          </div>
-        </li>
-
-        <li class="relative">
-          <button
-            class="w-full p-4 text-left"
-            @click="selected !== 7 ? selected = 7 : selected = null"
-            type="button"
-            ><div class="items-center flex justify-between text-black">
-              <p class="text-lg tracking-tight text-black">
-                Are there any refunds?
-              </p><svg
-                class="ml-4 duration-200 h-5 inline rotate-180 transform transition-transform w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                ><path
-                  d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"></path></svg
-              >
-            </div></button
-          ><div
-            class="relative overflow-hidden duration-700 max-h-0 transition-all"
-            style=""
-            x-bind:style="selected == 7 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-            x-ref="container2"
-          >
-            <div class="text-sm text-zinc-500 p-8 pt-0">
-              Unfortunately, not. Because of the intense creative demands for
-              delivering top-notch design and development within tight
-              timeframes and the thorough research invested to achieve the best
-              outcomes, minimal's cannot provide our services without
-              compensation.
-
-              <br /><br />
-              However, we understand the importance of client satisfaction. If, after
-              our initial discussion, it turns out that our services do not align
-              with your needs and no work has been initiated, rest assured that you
-              are eligible for a 100% refund. minimal value transparency and want
-              our clients to feel confident in their interactions with minimal's.
-            </div>
-          </div>
-        </li>
-      </ul>
+                />
+              </svg>
+            </summary>
+            <p class="mt-2 text-xs text-base-600">{faq.answer}</p>
+          </details>
+        ))
+      }
     </div>
   </div>
 </section>

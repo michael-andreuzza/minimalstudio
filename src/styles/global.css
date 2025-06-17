@@ -3,13 +3,17 @@
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
 
-:root {
-  font-family: Inter, sans-serif;
-
-}
-@supports (font-variation-settings: normal) {
-  /* Use variable font if supported */
-  :root {
-    font-family: InterVariable, sans-serif;
-  }
+@theme {
+  --font-sans: Geist, sans-serif;
+  --color-base-50: oklch(96.74% 0.001 286.38);
+  --color-base-100: oklch(93.73% 0.001 286.37);
+  --color-base-200: oklch(87.31% 0.004 271.36);
+  --color-base-300: oklch(80.82% 0.006 274.95);
+  --color-base-400: oklch(74.22% 0.009 278.59);
+  --color-base-500: oklch(67.48% 0.012 280.37);
+  --color-base-600: oklch(56.83% 0.015 281.34);
+  --color-base-700: oklch(46.56% 0.011 279.46);
+  --color-base-800: oklch(35.42% 0.009 285.95);
+  --color-base-900: oklch(23.48% 0.004 264.49);
+  --color-base-950: oklch(16.89% 0.002 286.18);
 }

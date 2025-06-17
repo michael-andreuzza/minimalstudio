@@ -1,0 +1,66 @@
+---
+const services = [
+  {
+    category: "Design",
+    items: [
+      "Landing page design",
+      "UI kits & component libraries",
+      "Brand identity & logo systems",
+      "Mobile app UI/UX",
+      "Wireframes & user flows",
+      "Design audits & polish",
+      "Design system setup (Figma)",
+      "Marketing & social media graphics",
+      "Presentation decks",
+      "Dark mode design support",
+    ],
+  },
+  {
+    category: "Development",
+    items: [
+      "Astro site builds",
+      "Custom Tailwind components",
+      "Headless CMS integration (Sanity, Contentful, etc.)",
+      "Performance & Lighthouse optimization",
+      "SEO-ready HTML structure",
+      "Markdown blog setup",
+      "Client-side interactivity with Alpine.js",
+      "Custom animation with GSAP or Framer Motion",
+      "Dark/light mode toggle implementation",
+      "Accessibility improvements",
+    ],
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 max-w-xl mx-auto">
+    <h2 class="text-4xl tracking-tight text-base-900 text-balance font-medium">
+      Services
+    </h2>
+
+    <div class="flex flex-col gap-px mt-4">
+      {
+        services.map(({ category, items }) => (
+          <div class="bg-white p-8 rounded-3xl">
+            <h3
+              id={`${category.toLowerCase()}-heading`}
+              class="text-xl text-base-900"
+            >
+              {category}
+            </h3>
+
+            <ul
+              role="list"
+              class="grid grid-cols-1 lg:grid-cols-2 gap-y-1 gap-x-4 mt-2 list-disc pl-4"
+            >
+              {items.map((title) => (
+                <li class="text-sm text-base-600">{title}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

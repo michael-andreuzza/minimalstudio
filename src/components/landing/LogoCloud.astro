@@ -1,8 +1,34 @@
+---
+import { Image } from "astro:assets";
+import c1 from "@/images/customers/1.svg";
+import c2 from "@/images/customers/2.svg";
+import c3 from "@/images/customers/3.svg";
+import c4 from "@/images/customers/4.svg";
+
+const logos = [
+  { src: c1, alt: "#_" },
+  { src: c2, alt: "#_" },
+  { src: c3, alt: "#_" },
+  { src: c4, alt: "#_" },
+];
+---
+
 <section>
-  <div class="px-8 md:px-12 max-w-2xl mx-auto">
-    <div class="grid grid-cols-2 gap-12 items-center">
-      <img class="h-8" src="/lexington.svg" alt="#_" />
-      <img class="h-8" src="/oxbow.svg" alt="#_" />
+  <div class="px-8 max-w-xl mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-12">
+      {
+        logos.map((logo) => (
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            width={200}
+            height={200}
+            class="h-8"
+            loading="eager"
+            decoding="async"
+          />
+        ))
+      }
     </div>
   </div>
 </section>

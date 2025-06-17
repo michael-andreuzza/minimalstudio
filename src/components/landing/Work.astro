@@ -1,168 +1,210 @@
+---
+import { Image } from "astro:assets";
+import Trendspotter from "@/images/work/trendspotter.png";
+import Navy from "@/images/work/navy.png";
+import Spaziobianco from "@/images/work/spaziobianco.png";
+import Phanatik from "@/images/work/phanatik.png";
+import Studiomax from "@/images/work/studiomax.png";
+import ProfolioxLight from "@/images/work/profolioxLight.png";
+import ProfolioxDark from "@/images/work/profolioxDark.png";
+import Outkast from "@/images/work/outkast.png";
+import Author from "@/images/work/author.png";
+import PrimapersonaLight from "@/images/work/primapersonaLight.png";
+import PrimapersonaDark from "@/images/work/primapersonaDark.png";
+import SimplexityLight from "@/images/work/simplexityLight.png";
+import SimplexityDark from "@/images/work/simplexityDark.png";
+import Carbon from "@/images/work/carbon.png";
+import Williamsburg from "@/images/work/williamsburg.png";
+import KoteiLight from "@/images/work/koteiLight.png";
+import KoteiDark from "@/images/work/koteiDark.png";
+import Dusk from "@/images/work/dusk.png";
+import Quartiere from "@/images/work/quartiere.png";
+import Flabbergasted from "@/images/work/flabbergasted.png";
+import Aubergine from "@/images/work/aubergine.png";
+import FlacoLight from "@/images/work/flacoLight.png";
+import FlacoDark from "@/images/work/flacoDark.png";
+import Buio from "@/images/work/buio.png";
+import Alfred from "@/images/work/alfred.png";
+import Hemingway from "@/images/work/hemingway.png";
+import StreamerLight from "@/images/work/streamerLight.png";
+import StreamerDark from "@/images/work/streamerDark.png";
+import Vanta from "@/images/work/vanta.png";
+import Semplice from "@/images/work/semplice.png";
+import Riflesso from "@/images/work/riflesso.png";
+import Carriera from "@/images/work/carriera.png";
+import Brightlight from "@/images/work/brightlight.png";
+import Hirewise from "@/images/work/hirewise.png";
+import Snowpeak from "@/images/work/snowpeak.png";
+import Enlightr from "@/images/work/enlightr.png";
+import Superstore from "@/images/work/superstore.png";
+const themes = [
+  { name: "Trendspotter", image: Trendspotter },
+  { name: "Spaziobianco", image: Spaziobianco },
+  { name: "Phanatik", image: Phanatik },
+  { name: "Studiomax", image: Studiomax },
+  { name: "ProfolioxLight", image: ProfolioxLight },
+  { name: "ProfolioxDark", image: ProfolioxDark },
+  { name: "Outkast", image: Outkast },
+  { name: "Author", image: Author },
+  { name: "PrimapersonaLight", image: PrimapersonaLight },
+  { name: "PrimapersonaDark", image: PrimapersonaDark },
+  { name: "SimplexityLight", image: SimplexityLight },
+  { name: "SimplexityDark", image: SimplexityDark },
+  { name: "Carbon", image: Carbon },
+  { name: "Williamsburg", image: Williamsburg },
+  { name: "KoteiLight", image: KoteiLight },
+  { name: "KoteiDark", image: KoteiDark },
+  { name: "Dusk", image: Dusk },
+  { name: "Quartiere", image: Quartiere },
+  { name: "Flabbergasted", image: Flabbergasted },
+  { name: "Aubergine", image: Aubergine },
+  { name: "FlacoLight", image: FlacoLight },
+  { name: "FlacoDark", image: FlacoDark },
+  { name: "Buio", image: Buio },
+  { name: "Alfred", image: Alfred },
+  { name: "Hemingway", image: Hemingway },
+  { name: "StreamerLight", image: StreamerLight },
+  { name: "StreamerDark", image: StreamerDark },
+  { name: "Vanta", image: Vanta },
+  { name: "Semplice", image: Semplice },
+  { name: "Riflesso", image: Riflesso },
+  { name: "Carriera", image: Carriera },
+  { name: "Brightlight", image: Brightlight },
+  { name: "Hirewise", image: Hirewise },
+  { name: "Snowpeak", image: Snowpeak },
+  { name: "Enlightr", image: Enlightr },
+  { name: "Superstore", image: Superstore },
+  { name: "Navy", image: Navy },
+];
+---
+
+<style>
+  .keen-slider__slide {
+    overflow: visible;
+  }
+</style>
+
 <section class="scroll-mt-24" id="work">
-
-  <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto">
-    <h2 class="text-xl tracking-tighter font-light text-black">
-      Some of Minimal work.
-    </h2>
-
-    <div
-      class="flex flex-col w-full"
-      x-data="{
-      skip: 1,
-      atBeginning: false,
-      atEnd: false,
-      next() {
-          this.to((current, offset) => current + (offset * this.skip))
-      },
-      prev() {
-          this.to((current, offset) => current - (offset * this.skip))
-      },
-      to(strategy) {
-          let slider = this.$refs.slider
-          let current = slider.scrollLeft
-          let offset = slider.firstElementChild.getBoundingClientRect().width
-          slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
-      },
-      focusableWhenVisible: {
-          'x-intersect:enter'() {
-              this.$el.removeAttribute('tabindex')
-          },
-          'x-intersect:leave'() {
-              this.$el.setAttribute('tabindex', '-1')
-          },
-      },
-      disableNextAndPreviousButtons: {
-          'x-intersect:enter.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = true
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = true
-              }
-          },
-          'x-intersect:leave.threshold.05'() {
-              let slideEls = this.$el.parentElement.children
-              // If this is the first slide.
-              if (slideEls[0] === this.$el) {
-                  this.atBeginning = false
-              // If this is the last slide.
-              } else if (slideEls[slideEls.length-1] === this.$el) {
-                  this.atEnd = false
-              }
-          },
-      },
-  }"
-    >
-      <div
-        class="flex flex-col w-full bg-white rounded-3xl pt-4  mt-4"
-        aria-labelledby="carousel-label"
-        role="region"
-        tabindex="0"
-        x-on:keydown.left="prev"
-        x-on:keydown.right="next"
-      >
-        <h2 class="sr-only" hidden="" id="carousel-label">Carousel</h2><span
-          class="sr-only"
-          hidden=""
-          id="carousel-content-label">Carousel</span
-        >
-        <div class="items-center justify-center inline-flex mx-auto space-x-2">
-          <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
-            :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
-            :aria-disabled="atBeginning"
-            :tabindex="atEnd ? -1 : 0"
-            x-on:click="prev"
-            tabindex="0"
-            ><span aria-hidden="true"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-3 w-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </span><span class="sr-only">Skip to previous slide page</span
-            ></button
-          >
-          <button
-            class="bg-zinc-200 hover:bg-zinc-200 focus:bg-zinc-50 rounded-lg inline-flex items-center text-center text-black p-2 ring-1 ring-zinc-300"
-            :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
-            :aria-disabled="atEnd"
-            :tabindex="atEnd ? -1 : 0"
-            x-on:click="next"
-            tabindex="0"
-            ><span aria-hidden="true"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-3 w-3 text-zinc-600 hover:text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 5l7 7-7 7"></path>
-              </svg>
-            </span><span class="sr-only">Skip to next slide page</span></button
-          >
-        </div>
-
-        <div
-          class="flex gap-3 overflow-x-scroll scrollbar-hide snap-mandatory snap-x w-full"
-          role="listbox"
-          aria-labelledby="carousel-content-label"
-          tabindex="0"
-          x-ref="slider"
-        >
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/alfred.png" alt="" />
-          </div>
-          <div
-            class="items-center justify-center w-full flex flex-col shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/navy.png" alt="" />
-          </div>
-          <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/riflesso.png" alt="" />
-          </div>
-           <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/bal.png" alt="" />
-          </div>
-           <div
-            class="items-center justify-center w-full flex flex-col
-          shrink-0 snap-start"
-            role="option"
-            x-bind="disableNextAndPreviousButtons"
-          >
-            <img src="/wb.png" alt="" />
-          </div>
-        </div>
+  <div class="px-8 py-24 max-w-xl mx-auto">
+    <div class="bg-white p-8 h-full rounded-3xl">
+      <div id="keen-slider" class="keen-slider relative">
+        {
+          themes.map(({ name, image }) => (
+            <div class="relative w-full keen-slider__slide  ">
+              <Image src={image} width={800} height={800} alt={name} />
+            </div>
+          ))
+        }
       </div>
     </div>
+    <div class="flex gap-2 items-center w-fit mx-auto mt-2">
+      <button
+        id="keen-slider-previous"
+        aria-label="Previous slide"
+        class="bg-white text-base-500 rounded-full p-2 hover:bg-base-900 hover:text-white duration-300 focus:outline-none focus:ring-2 focus:ring-base-500"
+      >
+        <svg
+          class="size-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button
+        id="keen-slider-next"
+        aria-label="Next slide"
+        class="bg-white text-base-500 rounded-full p-2 hover:bg-base-900 hover:text-white duration-300 focus:outline-none focus:ring-2 focus:ring-base-500"
+      >
+        <svg
+          class="size-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+    </div>
   </div>
+  <script type="module">
+    import KeenSlider from "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm";
+    window.addEventListener("DOMContentLoaded", () => {
+      const autoplay = (slider) => {
+        let timeout;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 500);
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      };
+      const sliderEl = document.getElementById("keen-slider");
+      if (!sliderEl) {
+        console.warn("Slider element not found");
+        return;
+      }
+      const keenSlider = new KeenSlider(
+        sliderEl,
+        {
+          loop: true,
+          defaultAnimation: {
+            duration: 1000,
+          },
+          detailsChanged: (s) => {
+            s.slides.forEach((element, idx) => {
+              element.style.opacity = s.track.details.slides[idx].portion;
+            });
+          },
+          slides: {
+            origin: "center",
+            perView: 1.5,
+            spacing: 12,
+          },
+          breakpoints: {
+            "(min-width: 1024px)": {
+              slides: {
+                origin: "auto",
+                perView: 1,
+                spacing: 0,
+              },
+            },
+          },
+        },
+        [autoplay]
+      );
+      const keenSliderPrevious = document.getElementById(
+        "keen-slider-previous"
+      );
+      const keenSliderNext = document.getElementById("keen-slider-next");
+      keenSliderPrevious?.addEventListener("click", () => keenSlider.prev());
+      keenSliderNext?.addEventListener("click", () => keenSlider.next());
+    });
+  </script>
 </section>
